@@ -1,0 +1,77 @@
+@import "~@angular/material/theming";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* For use in src/lib/core/theming/_palette.scss */
+$mat-geobarrio-primary: (
+  50: #e0fffd,
+  100: #b3fefa,
+  200: #80fef7,
+  300: #4dfdf4,
+  400: #26fcf1,
+  500: #00fcef,
+  600: #00fced,
+  700: #00fbeb,
+  800: #00fbe8,
+  900: #00fae4,
+  A100: #ffffff,
+  A200: #edfffd,
+  A400: #bafff8,
+  A700: #a1fff6,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$mat-geobarrio-accent: (
+  50: #ebf5f7,
+  100: #cce7ec,
+  200: #aad7e0,
+  300: #88c7d3,
+  400: #6fbbc9,
+  500: #55afc0,
+  600: #4ea8ba,
+  700: #449fb2,
+  800: #3b96aa,
+  900: #2a869c,
+  A100: #dff8ff,
+  A200: #aceeff,
+  A400: #79e3ff,
+  A700: #5fdeff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$primary: mat-palette($mat-geobarrio-primary);
+$accent: mat-palette($mat-geobarrio-accent);
+
+$theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);

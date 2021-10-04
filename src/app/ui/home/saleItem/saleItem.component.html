@@ -1,0 +1,21 @@
+
+<div fxLayout="row" class="allAll" >
+  <div class="left" fxFlex="100" fxLayout="row">
+      <div class="body" fxFlex="100" fxLayout="column"  fxLayoutAlign="center center">
+        <div fxLayout="row" fxFlex="100" class="item" *ngFor="let p of item.periodos;let indice=index">
+          <div fxLayout="column" fxFlex="50">
+            <span> Periodo: {{p.periodo}}</span>
+           <span> Valor: $ {{p.valor}}</span>
+          </div>
+            <div class="monto" fxLayoutAlign="center" fxFlex="50">
+              <button mat-button (click)="openDialog(p)">Agregar +</button>
+            </div>
+
+      </div>   
+        
+       
+  </div>
+    
+  </div>
+  
+</div>

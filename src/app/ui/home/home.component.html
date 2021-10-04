@@ -1,0 +1,42 @@
+<div fxLayout="column"  class="all" >
+     <div class="head" fxLayout="row" fxLayoutAlign="center">
+        <div class="back" fxFlex="20" fxLayoutAlign="end center">
+          <!-- <button
+            mat-icon-button
+            matTooltip="Cerrar Sesión"
+            (click)="logout()"
+          ></button> -->
+        </div>
+        <div class="titulo" fxLayout="column" fxFlex="100" fxLayoutAlign="center center">
+              <div class="header" fxLayout="row" fxFlex="10" fxLayoutAlign="center">
+                <div class="search" fxLayout="row" fxFlex="80" fxLayoutAlign="center center">
+                    <div fxFlex="80" class="date" fxLayout="row" fxLayoutAlign="space-around center" >                   
+                        <input fxFlex="60" fxLayoutAlign=" center" >
+                        <mat-icon matDatepickerToggleIcon>search</mat-icon>      
+                    </div>
+                </div>
+                <div fxFlex="10" fxLayoutAlign="center center" class="shopping_cart">
+                  <mat-icon matDatepickerToggleIcon (click)="carrito()">shopping_cart</mat-icon> 
+                 </div>
+             </div>
+            
+        </div>
+     </div>
+    <div   fxLayout="column" fxFlex="100" fxLayoutAlign="center center" 
+            class="container-all" ngClass.sm="container-all-sm" ngClass.xs = "container-all-xs" 
+                >
+        <div class="body" fxFlex="100" fxLayout="column" *ngIf="listProd && listProd.length>0">
+                <div fxLayout="column" fxFlex="70" class="item" *ngFor="let item of listProd;let indice=index">
+                  <div fxFlex="10"  fxLayoutAlign="center center">{{item.nombre}}</div>
+                  <saleItem  fxFlex="50" class="movimiento" [item]="item"></saleItem>
+                  <div fxFlex="1" class="line"></div>  
+                </div>   
+                    
+        </div>
+        <div class="NoVenta" fxFlex="90" fxLayout="column" *ngIf="listProd && listProd.length==0" fxLayoutAlign="center center">
+            <span>Sin planes </span>
+        </div>
+        <div class="footer" fxFlex="10" fxLayout="row" fxLayoutAlign=" center">
+      </div>
+  </div> 
+</div>

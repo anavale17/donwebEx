@@ -1,0 +1,22 @@
+<div class="all" fxLayout="column" fxLayoutAlign="center center">
+    <div class="head" fxLayoutAlign="center center" fxLayout="column" fxFlex="30">
+        <mat-icon>error</mat-icon>
+        <span class="atencion">Atención</span>
+        <span class="mje">Estás por anular esta venta:</span>
+    </div>
+    <!-- <div class="line"></div> -->
+    <mat-divider class="line"></mat-divider>
+    <div fxLayoutAlign="center center" fxLayout="column" fxFlex="30" class="movement">
+        <!-- <span>{{data.business.name}}  {{data.branchOffice.name}}</span>
+        <span>{{data.movementdate | date: 'dd/MM/yyyy'}}</span>
+        <span> $  {{data.amount}}</span>
+        <span>$ - {{data.discountAmount}}</span>
+        <span class="total">TOTAL $ {{data.amountTotal}}</span> -->
+    </div>
+    <div class="btns" fxLayoutAlign="center center" fxLayout="column">
+
+        <button class="confirmar" (click)="confirmar()">Confirmar</button>
+
+        <button class="cancelar" (click)="onNoClick(false)">Cancelar</button>
+    </div>
+</div>

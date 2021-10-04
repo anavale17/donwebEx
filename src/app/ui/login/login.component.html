@@ -1,0 +1,163 @@
+<div class="login w-100-p h-100-p" fxLayoutAlign="center center">
+  <div fxLayout="column" class="login w-100-p h-100-p">
+    <div fxFlex="8" class="container-top w-100-p">a</div>
+    <div fxFlex="92" class="container-botton w-100-p h-100-p">
+      <div fxLayout="row" class="w-100-p h-100-p">
+        <div fxFlex="50" class="container-lefth-botton w-100-p h-100-p">1</div>
+        <div fxFlex="50" class="container-right-botton w-100-p h-100-p">
+          <div class="container-form h-100-p" fxLayout="column">
+            <div
+              class="title-form"
+              fxFlex="20"
+              fxLayout="column"
+              fxLayoutAlign="end center"
+            >
+              <span>Ingresar</span>
+              <span>al sistema</span>
+            </div>
+            <div
+              class="form"
+              fxFlex="40"
+              fxLayout="column"
+              fxLayoutAlign="space-around center"
+            >
+              <div fxLayout="column" [formGroup]="formGroup" class="form">
+                <span class="text-login">Usuario</span>
+                <input
+                  class="login-input mb-20"
+                  placeholder="Usuario"
+                  formControlName="username"
+                  (keydown.enter)="login()"
+                />
+                <span class="text-login">Contraseña</span>
+                <div class="login-input" fxLayout="row">
+                  <div fxFlex="80" fxLayoutAlign="start center">
+                    <input
+                      class="input-class"
+                      type="password"
+                      [type]="hiden ? 'password' : 'text'"
+                      placeholder="Contraseña"
+                      formControlName="password"
+                      (keydown.enter)="login()"
+                    />
+                  </div>
+                  <div fxFlex="20" fxLayoutAlign="start center">
+                    <span
+                      class="material-icons icon-input"
+                      (click)="hiden = !hiden"
+                    >
+                      {{ hiden ? "visibility" : "visibility_off" }}
+                    </span>
+                  </div>
+                  <!-- <input
+                    type="password"
+                    placeholder="Contraseña"
+                    formControlName="password"
+                    (keydown.enter)="login()"
+                  /> -->
+                </div>
+              </div>
+              <div fxLayout="row" class="mt-24">
+                <button
+                  class="btn-default"
+                  mat-raised-button
+                  [disabled]="formGroup.invalid"
+                  (click)="login()"
+                >
+                  Entrar
+                </button>
+              </div>
+              <div
+                class="spinner mt-24"
+                fxLayout="row"
+                fxLayoutAlign="center center"
+                *ngIf="hasLoginError == false"
+              >
+                <mat-spinner
+                  [color]="'primary'"
+                  [diameter]="36"
+                  [strokeWidth]="4"
+                ></mat-spinner>
+              </div>
+              <div
+                class="login-error mt-24"
+                fxLayout="row"
+                fxLayoutAlign="center center"
+                *ngIf="hasLoginError == true"
+              >
+                <span>Email y/o contraseña incorrectos.</span>
+              </div>
+            </div>
+            <div class="image" fxFlex="40">
+              <img
+                src="../../../assets/backgrounds/login-background.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div fxLayout="row" class="w-100-p h-100-p">
+    <div fxFlex="60" class="right-container h-100-p">
+      <div
+        fxLayout="column"
+        class="w-100-p h-100-p"
+        fxLayoutAlign="center center"
+      >
+        <div fxLayout="column" class="w-280">
+          <div fxLayout="row" fxLayoutAlign="center center" class="mb-20">
+            <span class="subtitle">Iniciar Sesión</span>
+          </div>
+          <div fxLayout="column" [formGroup]="formGroup" class="form">
+            <input
+              class="login-input w-100-p mb-20"
+              placeholder="Usuario"
+              formControlName="username"
+              (keydown.enter)="login()"
+            />
+            <input
+              class="login-input w-100-p"
+              type="password"
+              placeholder="Contraseña"
+              formControlName="password"
+              (keydown.enter)="login()"
+            />
+          </div>
+          <div fxLayout="row" class="mt-24">
+            <button
+              class="btn-default w-100-p"
+              mat-raised-button
+              color="primary"
+              [disabled]="formGroup.invalid"
+              (click)="login()"
+            >
+              Ingresar
+            </button>
+          </div>
+          <div
+            class="spinner mt-24"
+            fxLayout="row"
+            fxLayoutAlign="center center"
+            *ngIf="hasLoginError == false"
+          >
+            <mat-spinner
+              [color]="'primary'"
+              [diameter]="36"
+              [strokeWidth]="4"
+            ></mat-spinner>
+          </div>
+          <div
+            class="login-error mt-24"
+            fxLayout="row"
+            fxLayoutAlign="center center"
+            *ngIf="hasLoginError == true"
+          >
+            <span>Email y/o contraseña incorrectos.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

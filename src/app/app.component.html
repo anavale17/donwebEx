@@ -1,0 +1,4 @@
+<app-splash *ngIf="isLoggedIn == null"></app-splash>
+<ng-container *ngIf="isLoggedIn != null">
+  <router-outlet></router-outlet>
+</ng-container>

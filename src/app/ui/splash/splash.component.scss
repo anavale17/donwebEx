@@ -1,0 +1,22 @@
+.splash {
+  background-color: #000000;
+
+  .loading {
+    .spinner-container {
+    }
+
+    .text-container {
+      margin-top: 12px;
+
+      .text {
+        color: #fff;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+:host ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #fff !important;
+}
